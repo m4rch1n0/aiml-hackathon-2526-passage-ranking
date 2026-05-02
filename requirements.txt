@@ -1,4 +1,4 @@
-# Two-stage passage ranking pipeline — pinned dependencies
+# Two-stage passage ranking pipeline - pinned dependencies
 # Python 3.10+ recommended
 
 torch>=2.0.0

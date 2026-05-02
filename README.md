@@ -1,4 +1,4 @@
-# AIML Hackathon 2526 — Passage Ranking Challenge
+# AIML Hackathon 2526 - Passage Ranking Challenge
 
 > **1st place** on the [Kaggle competition](https://www.kaggle.com/competitions/aiml-a-a-2025-26-end-of-year-hackathon) with a final **MAP@10 of 0.7268667247**, organized for the *Applicazioni Informatiche del Machine Learning* course at Sapienza University of Rome (a.y. 2025/26).
 
@@ -30,7 +30,7 @@ The result is most striking when compared to the rest of the top 10:
 | Average gap between consecutive teams from 2nd to 10th | 0.00048 |
 | Total MAP@10 spread covering all 9 places from 2nd to 10th | 0.00386 |
 
-**Our single-step gap from 1st to 2nd is approximately 14.5× larger than the average gap between consecutive teams below us** — and, in absolute terms, **roughly 1.8× larger than the entire spread separating the 2nd from the 10th place team combined**. On a metric where the rest of the top 10 was tightly clustered within ~0.004 MAP@10, our solution stood apart by a margin nearly twice that width.
+**Our single-step gap from 1st to 2nd is approximately 14.5× larger than the average gap between consecutive teams below us** - and, in absolute terms, **roughly 1.8× larger than the entire spread separating the 2nd from the 10th place team combined**. On a metric where the rest of the top 10 was tightly clustered within ~0.004 MAP@10, our solution stood apart by a margin nearly twice that width.
 
 ---
 
@@ -52,16 +52,16 @@ We used a **two-stage retrieval pipeline**, the standard architecture for modern
               └──────────────────────┘
 ```
 
-### Stage 1 — Dense Retrieval (Bi-Encoder)
+### Stage 1 - Dense Retrieval (Bi-Encoder)
 
 - **Model:** `sentence-transformers/all-mpnet-base-v2` (768-dim embeddings)
 - **Index:** FAISS `IndexFlatIP` (inner product on L2-normalized vectors)
 - **Pooling:** mean pooling over token embeddings, attention-mask weighted
 - **Cutoff:** top-K = **300** candidates per query
 
-We selected K=300 by analyzing **Oracle Recall** — the fraction of queries for which the gold passage appears in the top-K. At K=300, Oracle Recall ≈ **0.99**: nearly all relevant passages are retrieved, and increasing K further only adds compute without coverage gain.
+We selected K=300 by analyzing **Oracle Recall** - the fraction of queries for which the gold passage appears in the top-K. At K=300, Oracle Recall ≈ **0.99**: nearly all relevant passages are retrieved, and increasing K further only adds compute without coverage gain.
 
-### Stage 2 — Cross-Encoder Ensemble
+### Stage 2 - Cross-Encoder Ensemble
 
 Three Cross-Encoders score each (query, candidate) pair jointly:
 
@@ -78,7 +78,7 @@ Three Cross-Encoders score each (query, candidate) pair jointly:
 
 MonoT5 underperformed and was dropped. BM25 (lexical baseline, MAP ≈ 0.45) was also too weak to contribute.
 
-### Ensemble — Reciprocal Rank Fusion (RRF)
+### Ensemble - Reciprocal Rank Fusion (RRF)
 
 We fuse the three rerankers via RRF. For document *d* ranked at position *rᵢ(d)* by model *i*:
 
@@ -150,4 +150,4 @@ We thank the *Applicazioni Informatiche del Machine Learning* course staff at Sa
 
 ## License
 
-MIT — see [`LICENSE`](./LICENSE).
+MIT - see [`LICENSE`](./LICENSE).
