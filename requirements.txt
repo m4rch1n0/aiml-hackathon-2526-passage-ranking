@@ -1,0 +1,16 @@
+# Two-stage passage ranking pipeline — pinned dependencies
+# Python 3.10+ recommended
+
+torch>=2.0.0
+transformers>=4.40.0
+sentence-transformers>=2.7.0
+faiss-cpu>=1.7.4
+# For GPU FAISS install: faiss-gpu (replaces faiss-cpu)
+
+pandas>=2.0.0
+numpy>=1.24.0
+pyarrow>=14.0.0
+tqdm>=4.65.0
+
+# Optional, only for the BM25 baseline mentioned in the paper
+# rank_bm25>=0.2.2

@@ -1,0 +1,54 @@
+# Data — not committed (provided by the Kaggle competition)
+data/
+*.parquet
+*.csv
+!sample_submission.csv
+
+# Submissions and outputs
+submission.csv
+submissions/
+outputs/
+runs/
+
+# Model checkpoints / caches
+checkpoints/
+*.bin
+*.pt
+*.pth
+*.safetensors
+.cache/
+~/.cache/huggingface/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.installed.cfg
+*.egg
+
+# Virtual envs
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# OS
+Thumbs.db
