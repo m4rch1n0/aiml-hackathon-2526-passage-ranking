@@ -10,7 +10,7 @@ A two-stage neural passage ranking system on a sampled subset of MS MARCO. First
 
 | Author | GitHub |
 |---|---|
-| Lorenzo Cerovaz | [@CerovazS](https://github.com/CerovazS) |
+| Luca Cerovaz | [@CerovazS](https://github.com/CerovazS) |
 | Federico Forner | [@Fede2717](https://github.com/Fede2717) |
 | Marco Galletti | [@m4rch1n0](https://github.com/m4rch1n0) |
 
